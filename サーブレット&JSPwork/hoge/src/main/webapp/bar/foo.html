@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>foo.html</title>
+</head>
+<body>
+<h1>FOOOOOOOOoooooo!!!</h1>
+<br>
+<h2>barの中だよ</h2>
+<br>
+<a href="../foo.html">../foo.html</a>
+<br>
+<a href="../piyo/foo.html">../piyo/foo.html</a>
+
+<script>
+    // 次に遷移する先（ルート直下の foo.html）
+    const next = '../piyo/foo.html';
+    // 遅延（ミリ秒）—必要に応じて変えてOK-->
+    	const delay = 3000;
+
+     setTimeout(() => {
+      // 履歴を汚さない
+      //location.replace(next);
+      window.open(next)
+    }, delay);
+</script>
+</body>
+</html>
