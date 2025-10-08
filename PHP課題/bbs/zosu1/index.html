@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゾス掲示板</title>
+     <link rel="stylesheet" href="style.css">
+     <script src="script.js" defer></script>
+</head>
+
+<head>
+  <style>
+    .post {
+      background-color: #e6f7ff;
+      padding: 16px;
+      border-radius: 10px;
+      border: 1px solid #b3e0ff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      margin-top: 24px;
+    }
+  </style>
+</head>
+
+<body>
+
+    <div class="post">
+  <p class="text">ゾスとは何かを考えていたら朝になった<br>
+    そして私はひとこと呟いた...</p>
+  <div class="buttons">
+    <button class="like">❤️</button>
+    <button class="dislike">💔</button>
+    <button class="zosu">☢️</button>
+  </div>
+</div>
+
+<!-- ポップアップ表示用 -->
+<div id="popup" style="
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+">
+  <video id="popupVideo" style="max-width:300px;" autoplay muted></video>
+  <img id="popupGif" style="max-width:300px;" />
+</div>
+
+
+<!-- 投稿フォーム -->
+<div class="post">
+  <form id="postForm">
+    <textarea id="postInput" placeholder="いまどうしてる？" maxlength="140" rows="3" style="width: 100%; font-size: 16px;"></textarea>
+    <div style="text-align: right;">
+      <small id="charCount">0 / 140</small>
+    </div>
+    <button type="submit" style="margin-top: 8px;">投稿</button>
+  </form>
+</div>
+
+<h3 style="text-align: center;"><a href="../index.php">メインへ戻る</a></h3>
+
+</body>
+</html>
