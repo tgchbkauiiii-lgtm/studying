@@ -1,0 +1,611 @@
+/* 基本リセットとフォントの設定 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: serif; /* 上品さを出すためにセリフ体を指定 */
+    background-color: #fff;
+    color: #333;
+    /* style.css に追加する修正 */
+}
+
+/* --- ヘッダーのスタイル --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px; /* 広い余白を取る */
+    position: fixed; /* 固定ヘッダー */
+    top: 0;
+    width: calc(100% - 80px); /* padding分を考慮 */
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.9); /* 少し透明感を出す */
+    border-bottom: 1px solid #eee;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav li a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 20px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.main-nav li a:hover {
+    color: #000;
+}
+
+/* --- ハンバーガー用 --- */
+.hamburger-grid {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hamburger-grid__dots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  width: 100%;
+  height: 100%;
+}
+
+.hamburger-grid__dot {
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  border-radius: 50%;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hamburger-grid.active .hamburger-grid__dot {
+  background-color: #fff;
+}
+
+.hamburger-grid.active .hamburger-grid__dot:nth-child(1) {
+  transform: scale(0);
+}
+.hamburger-grid.active .hamburger-grid__dot:nth-child(2) {
+  transform: translateY(8px);
+}
+.hamburger-grid.active .hamburger-grid__dot:nth-child(3) {
+  transform: scale(0);
+}
+.hamburger-grid.active .hamburger-grid__dot:nth-child(4) {
+  transform: translateX(8px);
+}
+.hamburger-grid.active .hamburger-grid__dot:nth-child(5) {
+  transform: scale(1.2);
+}
+.hamburger-grid.active .hamburger-grid__dot:nth-child(6) {
+  transform: translateX(-8px);
+}
+.hamburger-grid.active .hamburger-grid__dot:nth-child(7) {
+  transform: scale(0);
+}
+.hamburger-grid.active .hamburger-grid__dot:nth-child(8) {
+  transform: translateY(-8px);
+}
+.hamburger-grid.active .hamburger-grid__dot:nth-child(9) {
+  transform: scale(0);
+}
+
+.nav-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #1a1a1a;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 900;
+}
+
+.nav-grid.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.nav-grid__content {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 100px 40px;
+}
+
+.nav-grid__sections {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.nav-grid__section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-grid.active .nav-grid__section {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-grid.active .nav-grid__section:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.nav-grid.active .nav-grid__section:nth-child(2) {
+  transition-delay: 0.3s;
+}
+
+.nav-grid__title {
+  margin: 0 0 20px;
+  color: #666;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.nav-grid__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-grid__list li {
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.nav-grid__link {
+  display: inline-block;
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.3s ease;
+}
+
+.nav-grid.active .nav-grid__link {
+  transform: translateY(0);
+}
+
+.nav-grid__link:hover {
+  color: #4a90e2;
+}
+
+@media (max-width: 768px) {
+  .nav-grid__content {
+    padding: 80px 20px;
+  }
+
+  .nav-grid__sections {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-grid__link {
+    font-size: 20px;
+  }
+}
+
+/* --- コンテナとスライドの基本設定 --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    position: absolute; /* すべてのスライドを重ねる */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* デフォルトは非表示 */
+    transition: opacity 2s ease-in-out; /* フェードアニメーションを2秒かける */
+    z-index: 1;
+}
+
+.carousel-slide.active-slide {
+    opacity: 1; /* active-slideクラスが付いたスライドだけ表示 */
+    z-index: 5;
+}
+
+/* --- 動画とコンテンツは前回のCSSを流用 --- */
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero-overlay, .hero-content {
+    /* z-indexの再調整 */
+    z-index: 10; 
+}
+
+/* --- テキストコンテンツのスタイルと配置 --- */
+.hero-content {
+    position: absolute;
+    top: 50%; /* 上から50%の位置 */
+    left: 50%; /* 左から50%の位置 */
+    transform: translate(-50%, -50%); /* 要素の幅・高さの半分だけ戻し、完全な中央に配置 */
+    text-align: center;
+    z-index: 10; /* 動画の上に重ねるためにz-indexを設定 */
+    color: #fff; /* 動画の色調に合わせて文字色を白に設定 */
+}
+
+.hero-content h1 {
+    font-family: serif; /* 前回の提案通り、上品なセリフ体 */
+    font-size: 4em;
+    margin-bottom: 0.5em;
+    letter-spacing: 4px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* 視認性向上のための影 */
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    /* 前回の提案のスタイルを維持しつつ、視認性向上の調整 */
+    display: inline-block;
+    padding: 15px 40px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.1); /* わずかに背景色を入れ、文字を際立たせる */
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+/* --- インジケーター（ドット）のスタイル --- */
+.carousel-indicators {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.dot.active-dot {
+    background-color: #fff;
+    transform: scale(1.2);
+}
+
+/* セクション全体 */
+.product-grid-section {
+    padding: 80px 5%; /* 上下の余白を大きく取る */
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+/* セクションタイトル */
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    font-weight: normal;
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+}
+
+/* 商品グリッド */
+.product-grid {
+    display: grid;
+    /* 1fr は利用可能なスペースの1等分を意味し、4つ並べる */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 30px; /* 行の隙間・列の隙間 */
+}
+
+/* 各商品アイテム */
+.product-item {
+    text-align: left;
+}
+
+.product-item a {
+    text-decoration: none;
+    color: #333;
+    display: block; /* リンクの範囲を広げる */
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4; /* 画像の縦横比を 3:4 に固定 */
+    object-fit: cover; /* 比率を保ちつつコンテナを埋める */
+    margin-bottom: 15px;
+    transition: opacity 0.3s;
+}
+
+.product-item a:hover img {
+    opacity: 0.8; /* ホバー時に少し透明にする */
+}
+
+.product-info {
+    padding: 0 5px; /* 少しだけ内側に余白 */
+}
+
+.product-name {
+    font-size: 0.9em;
+    margin: 0 0 5px;
+}
+
+.product-price {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+/* --- スマートフォン向けのレスポンシブ対応 --- */
+@media (max-width: 1024px) {
+    /* タブレットでは1列3商品に */
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* スマートフォンでは1列2商品に */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px 15px;
+    }
+
+    .section-title {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+    }
+}
+/* --- スマートフォン向けのレスポンシブ対応 --- */
+@media (max-width: 1024px) {
+    /* タブレットでは1列3商品に */
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* スマートフォンでは1列2商品に */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px 15px;
+    }
+
+    .section-title {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+    }
+}
+
+
+/* ▼▼▼ RECOMMENDセクションのスタイルを追加 ▼▼▼ */
+.recommend-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.recommend-carousel-wrapper {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+    overflow: hidden; /* はみ出したカルーセルを隠す */
+}
+
+.recommend-carousel {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* RECOMMENDセクション内の商品アイテムの幅を調整 */
+.recommend-carousel .product-item {
+    flex: 0 0 calc(25% - 22.5px); /* 4カラム表示 (22.5px = gapの3/4) */
+    max-width: calc(25% - 22.5px);
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 30;
+    font-size: 24px;
+    color: #333;
+    transition: all 0.3s;
+    opacity: 0; /* 通常は非表示 */
+    visibility: hidden;
+}
+
+.recommend-carousel-wrapper:hover .carousel-arrow {
+    opacity: 1; /* ホバー時に表示 */
+    visibility: visible;
+}
+
+.carousel-arrow:hover {
+    background-color: #fff;
+}
+
+.carousel-arrow.prev {
+    left: 20px;
+}
+
+.carousel-arrow.next {
+    right: 20px;
+}
+
+/* RECOMMENDレスポンシブ対応 */
+@media (max-width: 1024px) {
+    .recommend-carousel .product-item {
+        flex: 0 0 calc(33.333% - 20px); /* 3カラム */
+        max-width: calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .recommend-carousel .product-item {
+        flex: 0 0 calc(50% - 15px); /* 2カラム */
+        max-width: calc(50% - 15px);
+    }
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+/* ▲▲▲ RECOMMENDセクションここまで ▲▲▲ */
+
+
+/* ▼▼▼ RANKINGセクションのスタイルを追加 ▼▼▼ */
+.ranking-section {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.ranking-container {
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    align-items: center; /* 中央揃え */
+    gap: 40px;
+}
+
+.ranking-item {
+    position: relative; /* 順位バッジの基準位置 */
+    text-align: left;
+}
+
+.ranking-item a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.ranking-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: opacity 0.3s;
+}
+
+.ranking-item a:hover img {
+    opacity: 0.8;
+}
+
+.rank-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 15;
+}
+
+/* 1位のスタイル */
+.ranking-item.rank-1 {
+    width: 50%;
+    max-width: 600px;
+}
+.ranking-item.rank-1 img {
+    aspect-ratio: 4 / 5;
+}
+
+/* 2位と3位を囲むコンテナ */
+.ranking-sub-items {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+}
+
+/* 2位、3位のスタイル */
+.ranking-item.rank-2,
+.ranking-item.rank-3 {
+    width: calc(50% - 20px);
+    max-width: 400px;
+}
+
+.ranking-item.rank-2 img,
+.ranking-item.rank-3 img {
+    aspect-ratio: 3 / 4;
+}
+
+/* RANKINGレスポンシブ対応 */
+@media (max-width: 768px) {
+    .ranking-container {
+        gap: 25px;
+    }
+    .ranking-item.rank-1 {
+        width: 80%; /* 1位を少し大きく */
+    }
+    .ranking-sub-items {
+        flex-direction: column; /* 縦積みにする */
+        align-items: center;
+        gap: 25px;
+    }
+    .ranking-item.rank-2,
+    .ranking-item.rank-3 {
+        width: 70%; /* 2,3位も幅を確保 */
+    }
+    .rank-badge {
+        font-size: 18px;
+        width: 40px;
+        height: 40px;
+    }
+}
+/* ▲▲▲ RANKINGセクションここまで ▲▲▲ */
