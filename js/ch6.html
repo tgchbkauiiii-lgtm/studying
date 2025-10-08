@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//list6-1
+    const price = prompt('金額を入力してください');
+    //入力フォームを出す
+    if(price >= 5000) {//条件式
+        console.log('送料無料');//trueの処理ブロック文
+    }　else {
+        console.log('送料800円');//faluseの処理ブロック文
+    }
+//list6-2
+    const name = '';//undefined,nullとかでもおｋ
+
+    if (name) {
+        console.log('名前が存在します');
+    }　else {
+        console.log('名前がありません');
+    }
+
+    if (name) 
+        console.log('名前が存在します')
+    else 
+        console.log('名前がありません')
+
+//list6-3
+    const weight = prompt('荷物の重量を書いてください');
+    
+    if (weight < 250) {
+        console.log('配送料200円');
+    } else if (weight < 500) {
+        console.log('配送料400円');
+    } else if (weight < 1000) {
+        console.log('配送料600円');
+    } else {
+        console.log('取り扱いできません');
+    }
+    //変数を初期値無しで定義して処理文の中で表示文を代入し、最後にconsole.logで表示する方法もあり
+
+//checktestp112
+    const age = prompt('年齢を入力してください');
+    let shipping;
+
+    if (age == 18) //=は代入、==が比較
+        shipping = '新成人'
+    else if (age > 18)
+        shipping = '成人'
+    else 
+        shipping = '未成年'
+    
+    console.log(shipping);
+
+//list6-5
+    const a = 5;
+    console.log(a > 1 && a < 9);
+    console.log(a > 1 && a < 3);
+
+//list6-7
+    const age1 = 25;
+    if (age1 >= 20 && age1 <= 29) {
+        console.log('20代');
+    }
+
+    const age2 = 65;
+    if (age2 <= 10 || age2 >= 60) {
+        console.log('ジュニアまたはシニア');
+    }
+//checktestp118
+    const b = 5;
+    const c = 3;
+    let d;
+    (b <= c) ? d = b : d = c;
+    console.log(d);
+
+//list6-8
+    const ranking = 2;
+
+    switch (ranking) {
+        case 1:
+            console.log('金メダル');
+            break;
+        case 2:
+            console.log('銀メダル');
+            break;
+        case 3:
+            console.log('銅メダル');
+            break;
+        default:
+            console.log('メダルなし');
+    }
+
+    const order = prompt('ご注文をどうぞ');
+
+    switch (order) {
+        case 'コーヒー':
+            document.write('<img src="item1.jpg" alt="エスプレッソ">');
+            break;
+        case 'ドーナッツ':
+            document.write('<img src="item4.jpg" alt="ドーナッツ">');
+            break;
+        case 'パン':
+            document.write('<img src="item6.jpg" alt="クロワッサン">');
+            break;
+        default:
+            document.write('<img src="huh-cat-huh-m4rtin.gif" alt="猫ミーム「はぁ？」">');
+            document.write('<iframe width="560" height="315" src="https://www.youtube.com/embed/0b8ljbzeU2g?si=iGhSfUIzln6AkWVZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
+    }
+</script>
+</body>
+</html>

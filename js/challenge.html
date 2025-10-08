@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /* 
+    const time = prompt('時間を0~24までの数字で入力してください');
+    let hello;
+    if(time >= 4 && time <= 10) {
+        hello = 'おはようございます'; 
+    } else if (time > 10 && time <= 17) {
+        hello = 'こんにちは';
+    } else {
+        hello = 'こんばんは';
+    }
+    console.log(hello);
+    */
+    
+    const time = Number(prompt('時間を0~24までの数字で入力してください'));
+    let hello;
+    if(isNaN(time)) {
+        hello = '数字を半角で入力してください';
+    } else if(time < 0 || time > 24) {
+        hello = '0~24までの数字を入力してください'; 
+    } else if(time >= 4 && time <= 10) {
+        hello = 'おはようございます'; 
+    } else if (time > 10 && time <= 17) {
+        hello = 'こんにちは';
+    } else {
+        hello = 'こんばんは';
+    }
+    console.log(hello);
+
+    /*　先生のお手本
+    
+    if(hour != '' && hour != null){//未入力とキャンセルボタンの処理
+            if(hour <= 24 && hour >= 0){//規定時間以外の処理
+                if(hour <= 4){//深夜の処理
+                    document.write('<h1>こんばんは。</h1>');
+                }else if(hour <= 9){//朝の処理
+                    document.write('<h1>おはようございます。</h1>');
+                }else if(hour <= 18){//昼の処理
+                    document.write('<h1>こんにちは。</h1>');
+                }else{//その他（夜の処理)
+                    document.write('<h1>こんばんは。</h1>');
+                }
+            }else{
+                document.write('<h1>存在しない時間です。</h1>');
+            }
+        }else{
+            document.write('<h1>正しい値を入力してください。</h1>');
+        }
+    */
+</script>
+</body>
+</html>

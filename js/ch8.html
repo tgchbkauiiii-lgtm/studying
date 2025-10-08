@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//list8-1
+    /*
+    function hello() {
+        console.log('こんにちは');
+    }
+    hello();
+    hello();
+    */
+//list8-2
+    function hello(name) {
+        console.log(`こんにちは${name}さん`);
+    }
+    hello('Alice');
+    hello('Bob');
+//list8-3
+    function pi() {
+        return 3.14;
+    }
+
+    const a = pi();
+    console.log(a);
+    console.log(pi());
+
+//list8-4
+    function double(number) {
+        const result = number * 2
+        return result;
+    }
+    const b = double(10);
+    console.log(b);
+    console.log(double(10));
+    document.write(`<h1>${double(10)}</h1>`);
+
+    const c = double(8);
+    console.log(c);
+    console.log(double(10));
+    document.write(`<h1>${double(8)}</h1>`);
+    document.write('<h1>'+double(8)+'</h1>');
+
+//checktestp154
+    // function judgeNumber (n) {
+    //     let answer;
+    //     if (n % 2 == 0) {
+    //         answer = '偶数';
+    //     }  else {
+    //         answer = '奇数';
+    //     }
+    //     return answer;
+    // }
+    
+    // const n = prompt('数字を入力してください');
+    // console.log(judgeNumber(n));
+    
+    function judgeNumber (n) {
+        if (n % 2) {  //n%2==1と同じ意味
+            return '奇数';
+        }  else {
+            return '偶数';
+        }
+    }
+    
+    const n = prompt('数字を入力してください');
+    const answer = judgeNumber(n);
+    console.log(answer);
+
+    // function judgeNumber (n) {
+    //     if (n % 2) {  //n%2==1と同じ意味
+    //         return console.log('奇数');
+    //     }  else {
+    //         return console.log('偶数');
+    //     }
+    // }
+    
+    // const n = prompt('数字を入力してください');
+    // judgeNumber(n);
+    
+//list8-5
+    function sum (a,b) {//仮引数をa,bとする
+        const result = a + b;//変数resultを宣言し計算結果を代入
+        return result;//返り値にresultを設定
+    }
+
+    const x = sum(3,5);//関数に実引数を渡す
+    console.log(x);
+
+    const y = sum(10,20);
+    console.log(y);
+
+    // function sum (a,b) {
+    //     return a + b;
+    // }
+    // console.log(sum(3,5));
+    // console.log(sum(10,20)); 
+
+//list8-7
+    function hello(name = '名無しの権兵衛') {
+        console.log(`こんにちは${name}さん`);
+    }
+    hello('Bob');
+    hello();
+
+//checktestp157
+    function sayHello (nam = '名無し',gobi = 'さん') {
+        return nam + gobi;
+    }
+    const nam = prompt('お名前を入力してください');
+    const gobi = prompt('敬称を入力してください');
+
+    if (gobi!=''&&gobi!=null){
+        console.log(sayHello(nam,gobi));
+    }else{
+        console.log(sayHello(nam));
+    }
+    // if(gobi == '' || gobi == null) {
+    //     if(nam == '' || nam == null) {
+    //         console.log(sayHello());
+    //     } else {
+    //         console.log(sayHello(nam));
+    //     }
+    // } else {
+    //     if(nam == '' || nam == null) {
+    //         console.log(sayHello('',gobi));
+    //     } else {
+    //         console.log(sayHello(nam,gobi));
+    //     }
+    // }
+
+//list8-8
+    const sayhello = function(){
+        console.log('こんにちは');
+    }
+    sayhello();
+
+//list8-9
+    function sample () {
+        const z = 10;
+        console.log(z);
+    }
+    sample();
+    //console.log(z); zは関数内で定義されているので関数外で参照不可
+
+//p167
+    const zz = 1;
+    function doSomething(){
+        console.log(zz);
+    }
+    if(true){
+        console.log(zz);
+    }
+    doSomething();
+
+//checktestp168
+    let k = 10;
+    if (true) {
+        let k = 20;
+    }
+    console.log(k);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//list 4-1
+    console.log(typeof 10);//コンソールに10のデータ型を表示
+
+//list 4-10
+    console.log(Boolean(1));
+    console.log(Boolean(0));
+    console.log(Boolean('hello'));
+    console.log(Boolean(''));
+    console.log(Boolean(null));
+    console.log(Boolean(undefined));//空っぽのやつがfaluseになる
+
+//list 4-12
+    const a = 1;
+    const b = 2;
+    
+    const c = '2';
+
+    console.log(a + b);
+    console.log(a + c);
+
+//list 4-14
+    console.log(10 - 3);
+    console.log(3 * 5);
+    console.log(10 / 4);
+    console.log(17 % 5);
+    console.log(2 ** 4);//各種数値計算　引き算、掛け算、割り算、余り、累乗
+
+//infinityとNaN
+    console.log(3 / 0);
+    console.log(0 / 0);//０で割っちゃダメ
+
+//list4-17
+    console.log(a < b);//aはbより小さいか
+    console.log(a >= 3);//aは3以上か
+    console.log((a + b) > 3);//a+bは3より大きいか
+
+//list4-28
+    const name = 'Alice';
+    const text = '私の名前は' + name + 'です'; 
+    console.log(text);
+
+//check test p68
+    console.log((5 + 3) * 2);//8*2で16になるはず
+    console.log(12 <= 5);//falseのはず
+    let d = '100';
+    let e = 100;
+    console.log(d === e);//厳密には数値と文字で違う
+    console.log(d != e);//厳密に比べなければ等しいのでfalse
+
+//list4-31
+    const text2 = `私の名前は${name}です`;
+    console.log(text2);//``(バックティック、クォート)を使えば文字列の中に変数を入れられる
+
+//check test p77
+    let text3 = '私は"JavaScript"を学ぶ';
+    console.log(text3);
+
+//list4-38
+    let count = 10;
+    count++;//インクリメント演算子は数値に1を足す count += 1;でも同じ
+    console.log(count);
+    count += 3;
+    count--;
+    count -= 2;
+    console.log(count); 
+</script>
+</body>
+</html>

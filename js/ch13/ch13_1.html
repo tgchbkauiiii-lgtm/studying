@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="sample">オリジナルのテキストです</div>
+    <script>
+        const tag = window.document.querySelector('#sample');
+        tag.textContent = 'テキストを書き換えます';
+    </script>
+
+    <div class="sample">class属性がsample一個目</div>
+    <div class="sample">class属性がsample二個目</div>
+    <div class="sample">class属性がsample三個目</div>
+    <script>
+//list12-
+        const element = document.querySelector('.sample');
+        console.log(element);
+//list12-6
+        const elements = document.querySelectorAll('.sample');
+        console.log(elements.length);
+//list12-7
+        for (const element of elements) {
+            console.log(element);
+        }
+//list12-8
+        console.log(elements[0]);
+    </script>
+<!-- list12-9 -->
+    <div id="test">テスト</div>
+    <div class="test">テスト</div>
+    <ul>
+        <li class="item">アイテム1</li>
+        <li class="item">アイテム1</li>
+        <li class="item">アイテム1</li>
+    </ul>        
+    <script>
+        const id = document.querySelector('#test');
+        console.log(id);
+        const classtest = document.querySelector('.test');
+        console.log(classtest);
+        const classitems = document.querySelectorAll('.item');
+        for (const classitem of classitems) {
+            console.log(classitem);
+        }
+    </script>
+<!-- list13-12 -->
+    <img src="sample.jpg" width="200" height="200">
+    <script>
+        const img = document.querySelector('img');
+        
+        setInterval(() => {img.width++;img.height++},100);
+        setTimeout(() => {location.reload},60000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<!-- list13-14 -->
+    <div class="profile" data-id="100" data-user-name="zaru">zaru</div>
+<!-- list13-15 -->
+    <script>
+        const profile = document.querySelector('.profile');
+        console.log(profile.dataset.id);
+        console.log(profile.dataset.userName);
+// list13-16
+        profile.dataset.id = 999;
+        profile.dataset.userName = 'new zaru';
+        console.log(profile);
+    </script>
+</body>
+</html>

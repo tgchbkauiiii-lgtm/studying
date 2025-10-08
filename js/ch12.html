@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//list12-1
+    window.alert('アラートです');
+
+//list12-3
+    const result = confirm('本当に削除してよろしいですか？');
+    if (result) {
+        //実際に削除する処理はここに入れる
+        console.log('削除しました');
+    } else {
+        console.log('キャンセルしました');
+    }
+
+//list12-4
+    function delayTask () {
+        console.log('1秒後に実行する');
+    }
+
+    setTimeout(delayTask,1000);
+
+//list12-6
+    function delayTask () {
+        console.log('1秒ごとに繰り返し実行される');
+    }
+    setInterval(delayTask,2000);
+
+//list12-7
+    open('https://www.youtube.com/','Youtube','width=400,height=250');
+
+//list12-10
+    location.reload();
+    //今のページを再読み込み
+    location.href = 'https://www.google.co.jp/';
+    //指定したページに遷移 google系は上手くいかんらしい
+</script>
+</body>
+</html>

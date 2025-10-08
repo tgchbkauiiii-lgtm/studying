@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div style="width: 200px; height: 100px; background: pink;"></div>    
+    <script>
+        const div = document.querySelector('div');
+        div.addEventListener('mousemove', (event)=>{
+            console.log(`Move : x = ${event.offsetX},y =  ${event.offsetY}`);
+        });
+        div.addEventListener('mousedown', (event)=>{
+            console.log(`Down : x = ${event.offsetX},y =  ${event.offsetY}`);
+        });
+        div.addEventListener('mouseup', (event)=>{
+            console.log(`Up : x = ${event.offsetX},y =  ${event.offsetY}`);
+        });
+    </script>
+</body>
+</html>

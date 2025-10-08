@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//list5-1
+    const interests = ['読書','料理','キャンプ'];
+    console.log(interests);
+
+//list5-2
+    const element0 = interests[0];
+    console.log(element0);
+
+//list5-3
+    const elemaent5 = interests[5];
+    //console.log(element5); 存在しない要素を呼び出すとエラー出る
+
+//checktestp94
+    const foods = ['寿司','カレー','ラーメン'];
+    const food2 = foods[1];
+    console.log(food2);
+    console.log(foods[0]);
+
+//list5-6
+    console.log(interests.length);
+
+    const count2 = interests.length;
+    console.log(count2);//どっちの書き方でも行けるでぇ
+
+//list5-7
+    interests.push('散歩');//配列の最後に要素を追加
+    console.log(interests);
+
+//list5-8
+    const alphabet = ['a', 'b', 'c'];
+    const last = alphabet.pop();
+    //配列の最後の要素を抜き出す（後に残らないので参照するだけなら非推奨の方法）
+    console.log(alphabet);
+    console.log(last);
+
+//list5-9
+    const fruits = ['みかん', 'りんご', 'バナナ'];
+    console.log(fruits.includes('りんご'));
+    console.log(fruits.includes('ぶどう'));
+
+//list5-10
+    const a = interests.join('と');
+    console.log(a);
+
+    console.log(interests.join('と'));
+
+//list5-11
+    const string = '読書&料理&キャンプ';
+    const 配列 = string.split('&');
+    console.log(配列);
+
+//checktestp100
+    foods.push('パスタ');
+    console.log(foods);
+    foods.pop();
+    foods.pop();
+    console.log(foods);
+
+//寿司を消してそばと天ぷらを順不同で追加しよう
+    foods[0] = 'そば';
+    foods.push('天ぷら');
+    console.log(foods);
+</script>
+</body>
+</html>

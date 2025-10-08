@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <button type="button">ボタン</button>
+    <div>0</div>
+
+    <script>
+        function countup () {
+            count++;
+            document.querySelector('div').textContent = count;
+        }
+
+        let count = 0;
+        document.querySelector('button').addEventListener('click',countup);
+
+        // function countup () {
+        //     count++;
+        //     const div = document.querySelector('div');
+        //     div.textContent = count;
+        // }
+
+        // let count = 0;
+        // const button = 
+
+        // document.querySelector('button').addEventListener('click',countup);
+    </script>
+</body>
+</html>

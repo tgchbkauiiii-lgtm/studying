@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<!-- list13-17 -->
+    <p class="score" data-score="100">100点です</p>
+<!-- list13-18 -->
+    <script>
+        const scoreElement = document.querySelector('.score');
+        //scoreElementにscoreクラスのタグを代入
+        const score = scoreElement.dataset.score;
+        //scoreにscore属性の値を代入
+        if (score >= 80) {
+            scoreElement.style.color ='blue';
+    //'blue'は'#00f'とかでもいける
+        }
+    </script>
+</body>
+</html>

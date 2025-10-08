@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const newElement = document.createElement('div');
+        newElement.textContent = '新しく作る要素';
+
+        const body = document.querySelector('body');
+        body.prepend(newElement);
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            color: red;
+        }
+        html {
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+<!-- 課題　ナベアツになれ -->
+<script> 
+//自分で頑張ってみたやつ
+    // for (let i = 1; i <= 100; i++) {
+    //     const char = `${i}`;
+    //     if(i % 3 ==0) {
+    //         document.write(`<p class=red>${i}</p>`);
+    //     } else if (i <=39 && i>=30) {
+    //         document.write(`<p class=red>${i}</p>`);
+    //     } else if (char=='13'||char=='23'||char=='43'||char=='53'||char=='63'||char=='73'||char=='83'||char=='93') {
+    //         document.write(`<p class=red>${i}</p>`);
+    //     } else {
+    //         document.write(`<p>${i}</p>`);
+    //     }
+    // }
+
+
+//先生による模範解答
+    for (let i = 0; i <= 100; i++) {
+        if(!(i%3)) {
+            document.write(`<p class=red>${i}</p>`);
+        } else if (Math.floor(i/10)==3) {
+            document.write(`<p class=red>${i}</p>`);
+        } else if (i % 10 == 3) {
+            document.write(`<p class=red>${i}</p>`);
+        } else {
+            document.write(`<p>${i}</p>`);
+        }
+    }
+
+//文字列にする場合
+    // for (let i = 1; i <= 100; i++) {
+    //     if (i % 3 === 0 || String(i).includes('3')) {
+    //         document.write(`<p class="red">${i}</p>`);
+    //     } else {
+    //         document.write(`<p>${i}</p>`);
+    //     }
+    // }
+</script>
+</body>
+</html>

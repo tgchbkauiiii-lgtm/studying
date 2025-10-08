@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<!-- list13-27 -->
+    <div class="content">
+        <p>最初からある要素です</p>
+    </div>
+    <script>
+// list13-28
+        const newElement = document.createElement('p');
+        newElement.textContent = '新しく追加しました';
+
+        const content = document.querySelector('.content');
+        content.append(newElement);
+    </script>
+</body>
+</html>

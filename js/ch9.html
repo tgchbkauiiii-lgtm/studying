@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//list9-1
+    const book = {
+        title : '吾輩は猫である',
+        author : '夏目漱石',
+        pages : 620
+    }
+    console.log(book);
+    console.log(typeof book);
+
+//list9-3
+    console.log(book.title);
+    console.log(book['title']);
+
+//checktestp181
+    const bicycle = {
+    color : '赤',
+    inch : 25
+    }
+    console.log(bicycle.color);
+    bicycle.inch = 16;
+    console.log(bicycle);
+
+//list9-7,8,10
+    const person = {
+        name : 'アリス',
+        interests : ['読書','料理'],
+        greet : function(){
+            console.log(`こんにちは、私は${this.name}です。`);
+        }
+    }
+    person.greet();
+
+</script>
+</body>
+</html>

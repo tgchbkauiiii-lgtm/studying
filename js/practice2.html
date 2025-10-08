@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .image {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <img src="item1.jpg" alt="" class="main">
+    <!-- id= -->
+    <hr>
+    <img src="item1.jpg" alt="コーヒー" class="image">
+    <img src="item4.jpg" alt="ドーナッツ" class="image">
+    <img src="item5.jpg" alt="タルト" class="image">
+    <script>
+        const images = document.querySelectorAll('.image');
+        const main = document.querySelector('.main');
+        
+        for (let image of images) {
+            image.addEventListener('mouseover',(event)=>{
+                main.src = event.currentTarget.src;
+            });
+        }
+    </script>
+</body>
+</html>

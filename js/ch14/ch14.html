@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    
+    <input type="radio" name="radio" value="1" class="radio">1
+    <input type="radio" name="radio" value="2" class="radio">2
+
+    <input type="checkbox" name="checkbox[]" value="1" class="checkbox">1
+    <input type="checkbox" name="checkbox[]" value="2" class="checkbox">2
+
+    <select class="select">
+        <option value=""></option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select>
+
+    <input type="text" id="input2">
+<!-- list14-1 -->
+    <button type="button">ボタン</button>
+    <script>
+        function alertMessage () {
+            alert ('ボタンをクリックしました');
+        }
+        const button = document.querySelector('button');
+        button.addEventListener('click',alertMessage);
+
+//list14-3
+        const input = document.querySelector('input');
+        input.addEventListener('input', function (event) {
+            const value = event.currentTarget.value;
+            console.log(`入力内容: ${value}`);
+        });
+        
+//list14-4
+        // const radios = document.querySelector('.radio');
+        // for (let radio of radios) {
+        //     radio.addEventListener('input', function(event) {
+        //         const value = event.currentTarget.value;
+        //         console.log(`${value}がチェックされました`);
+        //     });
+        // }
+//list14-5
+        const checkboxes = document.querySelectorAll('.checkbox');
+        for (let checkbox of checkboxes) {
+            checkbox.addEventListener('input',function (event) {
+                const value = event.currentTarget.value;
+                console.log(`${value}がチェックされました`);
+            });
+        }
+//liat14-6
+        // const select = document.querySelectorAll('.select');
+        // select.addEventListener('input', function (event) {
+        //     const value = event.currentTarget.value;
+        //     console.log(`${value}が選択されました`);
+        // });
+
+//list14-7
+        const input2 = document.querySelector('#input2');
+        input2.addEventListener('keydown',(event)=>{
+            console.log(event.key);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+/* checktestp274 */
+        p {
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <p>このテキストの文字幅を変更してください</p>
+    <p class="java">スラスラ</p>
+    <script>
+        const p = document.querySelector('p');
+        p.style.letterSpacing = '10px';
+        const java = document.querySelector('.java');
+        java.classList.replace('java','javascript');
+        console.log(java);
+    </script>
+</body>
+</html>

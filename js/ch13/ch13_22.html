@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<!-- list13-22 -->
+    <style>
+        .normal {
+            font-size: 16px;
+            color: black;
+            background-color: white;
+        }
+        .warning {
+            font-size: 36px;
+            color: red;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <p class="normal">テキストです。</p>
+<!-- list13-23 -->
+    <script>
+        const element = document.querySelector('p');
+        element.classList.remove('normal');
+//list13-24
+        element.classList.add('warning');
+//list13-25
+        element.classList.replace('normal','warning');
+    </script>
+</body>
+</html>

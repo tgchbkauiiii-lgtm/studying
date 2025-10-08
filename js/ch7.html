@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//list7-1
+    for (let i = 1; i <= 5; i++){
+        console.log(`${i}回目の処理`);
+        //console.log(i + `回目の処理`); でもいい
+    }
+
+//list7-2
+    for (let i = 0; i < 10; i++) {
+        console.log('hello');
+        document.write('<h1>hello<br></h1>');
+    }//iが0～9の間10回hello書き続ける
+
+    /*　無限ループにご注意
+    for (let i = 0; i >= 0; i++) {
+        console.log('hello');
+    }
+    */
+//checktestp131
+    for (let j = 5; j <= 10; j++) {
+        console.log(j);
+        document.write(`<h1>${j}<br></h1>`);
+    }
+    
+//list7-3
+    let number = 2;//numberを初期値2で宣言
+
+    while (number < 100) {//100より小さい間繰り返す
+        console.log(`${number}番`);//numberをコンソールに表示
+        number = number * 2;//numberに2をかけて再代入　以下繰り返し
+    }
+
+//checktestp135
+    let n = 1;
+
+    while (n <= 5) {
+        console.log(n);
+        n++;
+    }
+
+//list7-5
+const fruits = ['りんご','みかん','バナナ','ぶどう'];
+
+for (let i = 0; i < fruits.length; i++) {
+    //fruitsの要素数よりiが小さい間0~3回繰り返す
+    console.log(fruits[i]);
+}
+
+for (let i = fruits.length - 1; i >= 0; i--) {
+    console.log(fruits[i]);//逆順で表示
+}
+
+//list7-6
+    for (const fruit of fruits) {
+        console.log(fruit);
+    }
+
+//checktestp139
+    for (const element of fruits) {
+        console.log(element + '食べたい'); 
+    }
+    /*
+    for (const element of fruits) {
+        element = element + '食べたい';
+        ↑constで定義してるから再代入できない
+        console.log(element); 
+    }
+    */
+</script>
+</body>
+</html>
