@@ -1,0 +1,156 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@100..900&family=Potta+One&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@100..900&family=Potta+One&display=swap'); */
+
+/* すべてのページに適用される設定 */
+html{
+    font-size: 16px;/*文字の大きさを指定する*/
+    font-family: "Potta One", system-ui;/*フォントを指定*/
+    scroll-behavior: smooth;/* スクロールをスムーズにする  */
+}
+*{
+    box-sizing: border-box;/*border-boxに統一しておく*/
+}
+body{
+     margin: 0 0 0 0;/*bodyのmarginを全周0にする */
+}
+p,li,td{
+    line-height: 1.7;/*文字の行間の幅を指定*/
+}
+
+/* すべてのページに適用　－　ヘッダー */
+.logo{
+    text-align: center;/*logoを中央ぞろえ*/
+}
+.nav ul{
+    margin: 30px 0 0 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.nav a:link {
+    color: #253958
+}
+.nav a:visited {
+    color: #253958;
+}
+.nav a:hover {
+    text-decoration: none;
+}
+.nav a:active {
+    text-decoration: none;
+}
+.header{
+    padding-top: 40px;
+    background-image: url(../images/stripe.png);
+    background-repeat: repeat-x;
+}
+/* すべてのページに適用　－　ヒーロー */
+.hero{
+    text-align: center;/*見出し文を中央揃え*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    padding: 137px 0;
+}
+/* すべてのページに適用　ー　メイン */
+main{
+    margin: 90px auto;
+    max-width: 1000px;
+}
+main h2{
+    margin: 60px 0 20px 0;
+    padding: 0  0 5px 0;
+    border-style:initial;
+    border-bottom: 2px solid #253958;
+    color: #253958;
+}
+h2{
+    font-size: 1.3rem;
+}
+a{
+    transition: all 5s;
+}
+a:link{
+    color: #f07d34;
+    text-decoration: none;
+}
+a:visited{
+    color: #f07d34;
+    text-decoration: none;
+}
+a:hover{
+    background-color: #253958;
+    color: #f07d34;
+    text-decoration: underline;
+    transition: "background-color" 5s;
+}
+a:active{
+    color: #f07d34;
+    text-decoration: underline;
+}
+img{
+    max-width: 100%;/* 親要素に対して100%の幅になる */
+}
+/* すべてのページに適用　－　フッター */
+.gotop{
+    text-align: center;
+}
+.copyright{
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    background-color: rgba(37, 57, 88, 0.7);
+    color: #fff;
+    text-align: center;
+}
+/* 個別のスタイル */
+
+/* index.html */
+.logo-whale{
+    text-align: center;/*クジラのロゴを中央揃え*/
+}
+.shop-info{
+    border-collapse: collapse;
+}
+.shop-info th, .shop-info td{
+    border: 1px solid #dbdbdb;
+    padding: 20px;
+}
+.shop-info th{
+    width: 112px;
+    text-align: left;
+    vertical-align: top;
+}
+
+/* menu.html */
+.items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+/* contact.html */
+
+/* モバイル対応 */
+@media(max-width: 767px) {
+    .nav ul{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    main{
+        padding: 0 4%;
+    }
+    /* index.html */
+    .hero.index{
+        padding: 28vh 0;
+    }
+    /* menu.html */
+    .items{
+        grid-template-columns: 1fr 1fr;
+    }
+}
