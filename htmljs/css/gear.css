@@ -1,0 +1,241 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Hachi+Maru+Pop&family=Noto+Sans+JP:wght@100..900&family=Potta+One&display=swap');
+
+/* すべてのページに適用される設定 */
+.hachi-maru-pop-regular {
+  font-family: "Hachi Maru Pop", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html{
+    font-size: 16px;/*文字の大きさを指定する*/
+    font-family: "Potta One", system-ui;/*フォントを指定*/
+    scroll-behavior: smooth;/* スクロールをスムーズにする  */
+}
+*{
+    box-sizing: border-box;/*border-boxに統一しておく*/
+}
+body{
+     margin: 0 0 0 0;/*bodyのmarginを全周0にする */
+     background-color: black;
+     background-image: url(../images/back.JPG);
+     background-repeat: no-repeat;
+     background-size: contain;
+     background-attachment: fixed;
+}
+p,li{
+    color: whitesmoke;
+    line-height: 1.7;/*文字の行間の幅を指定*/
+}
+
+/* すべてのページに適用　－　ヘッダー */
+.logo{
+    text-align: center;/*logoを中央ぞろえ*/
+}
+.nav ul{
+    margin: 30px 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.nav a:link {
+    color: aqua;
+}
+.nav a:visited {
+    color: #00f;
+}
+.nav a:hover {
+    text-decoration: underline;
+}
+.nav a:active {
+    text-decoration: double;
+}
+.header{
+    background-image: url(../images/guitar1.JPG);
+    background-repeat: no-repeat;
+    text-align: center;/*見出し文を中央揃え*/
+    background-position: center;
+    background-size: cover;
+    font-size: 50px;
+    color: #fff;
+    padding: 80px 0;
+}
+/* すべてのページに適用　－　ヒーロー */
+h1{
+    background-image: url(../images/guitar2.JPG);
+    text-align: center;/*見出し文を中央揃え*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #0f0;
+    margin: 0;
+    padding: 50px 0;
+}
+.bord{
+    background-image: url(../images/bord.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #f90;
+    text-align: center;
+    font-size: 40px;
+    padding: 200px 0;
+}
+main{
+    margin: 90px auto;
+    max-width: 1000px;
+}
+main h2{
+    margin: 60px 0 20px 0;
+    padding: 0  0 5px 0;
+    border-style:initial;
+    border-bottom: 2px solid #55f;
+    color: #55f;
+}
+h2{
+    font-size: 30px;
+}
+h3{
+    font-size: 20px;
+    color: #f07;
+}
+#control {
+    color: #fff;
+}
+.slide-wrap{
+    margin: 10px 300px 10px 300px;
+    width: 400px;
+    height:  600px;
+    text-align: center;
+}
+a{
+    transition: all 5s;
+}
+a:link{
+    color: #f07d34;
+    text-decoration: none;
+}
+a:visited{
+    color: #f07d34;
+    text-decoration: none;
+}
+a:hover{
+    background-color: #253958;
+    color: #f07d34;
+    text-decoration: underline;
+    transition: "background-color" 5s;
+}
+a:active{
+    color: #f07d34;
+    text-decoration: underline;
+}
+img{
+    max-width: 100%;/* 親要素に対して100%の幅になる */
+}
+/* すべてのページに適用　－　フッター */
+.gotop{
+    text-align: center;
+    background-image: url(../images/pec-2.JPG);
+    background-position: center;
+    background-size: cover;
+    padding: 110px 0;
+}
+.copyright{
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    background-color: rgb(34, 239, 68);
+    color: #fff;
+    text-align: center;
+}
+/* スライダー内の解説テキストのスタイル */
+.item-explanation {
+    display: none; /* 初期状態では非表示 */
+    background-color: rgba(51, 51, 51, 0.9); /* 少し透明な背景 */
+    color: whitesmoke;
+    padding: 15px;
+    margin-top: 10px; /* 画像との間隔 */
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: left;
+    width: 100%; /* スライドアイテムの幅いっぱいに */
+    box-sizing: border-box; /* paddingを含めて幅を計算 */
+}
+
+.item-explanation h3 {
+    color: #0f0; /* 見出しの色 */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.item-explanation p {
+    color: #eee; /* 本文の色 */
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* 個別のスタイル */
+
+/* index.html */
+/* menu.html */
+/* .guitars{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.pedals{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+.others{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+.amps{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+} */
+
+/* モバイル対応 */
+@media(max-width: 767px) {
+    main{
+        padding: 0 4%;
+    }
+
+    .nav ul {
+        gap: 10px; /* Reduce gap between navigation items */
+    }
+
+    .nav li{
+        font-size:  14px; /* Adjust font size for better fit */
+    }
+
+    .header {
+        font-size: 30px; /* Smaller header font size */
+        padding: 40px 0; /* Reduced padding */
+    }
+
+    h1 {
+        padding: 30px 0; /* Reduced padding for hero headings */
+        font-size: 2em; /* Adjust hero heading font size */
+    }
+
+    .bord{
+        padding: 100px 0; /* Reduced padding for the 'bord' section */
+        font-size: 20px; /* Smaller font size for 'bord' text */
+    }
+
+    .slide-wrap{
+        margin: 10px auto; /* Center the slide wrap horizontally */
+        width: 90%; /* Make slide wrap more responsive */
+        height: auto; /* Adjust height automatically */
+    }
+}
