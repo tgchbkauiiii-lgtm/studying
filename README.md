@@ -13,7 +13,7 @@
 
 という過程を繰り返しました。
 習った言語と訓練で使わせていただいた教科書を習った順番通り以下に列挙します。
-1. [HTML/CSS](#HTML/CSS "HTML/CSS部分へ")
+1. [HTML/CSS](#HTML/CSS "HTML/CSS部分へ")<br>
 [「スラスラわかるHTML&CSSのきほん」第3版](https://www.sbcr.jp/product/4815611651/)
 著者：狩野祐東　発行：SBクリエイティブ株式会社
 2. JavaScript
