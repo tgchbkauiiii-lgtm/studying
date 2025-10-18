@@ -34,12 +34,12 @@
 [「スッキリわかるサーブレット＆JSP入門」第4版](https://sukkiri.jp/books/sukkiri_servlet4)
 著者：国本大悟　発行：株式会社インプレス
 ### 各フォルダについて
-cafe:「スラスラわかるHTML&CSSのきほん」第3版で書いたコード
-htmlcss:HTMLとCSSの単元の自由制作
-js:「スラスラわかるJavaScript」新版で書いたコード
-htmljs:JavaScriptの単元の自由制作
-php:「よくわかるPHPの教科書」PHP7対応版で書いたコード
-PHP課題:phpの単元のチーム自由制作
-Python:「スッキリわかるPython入門」第2版で書いたコード
-Python_Automatic:「シゴトがはかどるPython自動処理の教科書」で書いたコード
-SQL:「スッキリわかるSQL入門」第4版　ドリル256問付き！」で書いたコード
+cafe:「スラスラわかるHTML&CSSのきほん」第3版で書いたコード<br>
+htmlcss:HTMLとCSSの単元の自由制作<br>
+js:「スラスラわかるJavaScript」新版で書いたコード<br>
+htmljs:JavaScriptの単元の自由制作<br>
+php:「よくわかるPHPの教科書」PHP7対応版で書いたコード<br>
+PHP課題:phpの単元のチーム自由制作<br>
+Python:「スッキリわかるPython入門」第2版で書いたコード<br>
+Python_Automatic:「シゴトがはかどるPython自動処理の教科書」で書いたコード<br>
+SQL:「スッキリわかるSQL入門」第4版　ドリル256問付き！」で書いたコード<br>
